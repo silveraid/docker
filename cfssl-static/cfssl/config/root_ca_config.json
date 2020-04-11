@@ -1,0 +1,28 @@
+{
+    "CN": "",
+    "key": {
+        "algo": "ecdsa",
+        "size": 256
+    },
+    "names": [
+        {
+            "O": "",
+            "OU": "",
+            "L": "",
+            "ST": "",
+            "C": ""
+        }
+    ],
+    "ca": {
+        "expiry": "262800h"
+    },
+    "signing": {
+        "default": {
+            "usages": [
+                "cert sign",
+                "crl sign"
+            ],
+            "expiry": "8760h"
+        }
+    }
+}

@@ -34,8 +34,18 @@ RUN     set -ex; \
 FROM    alpine:3
 
 # copy over the static binaries from the builder
-COPY --from=builder /go/src/github.com/cloudflare/cfssl/bin/cfssl /usr/local/bin/
-COPY --from=builder /go/src/github.com/cloudflare/cfssl/bin/cfssljson /usr/local/bin/
+COPY    --from=builder /go/src/github.com/cloudflare/cfssl/bin/cfssl /usr/local/bin/
+COPY    --from=builder /go/src/github.com/cloudflare/cfssl/bin/cfssljson /usr/local/bin/
+
+#
+COPY   cfssl /cfssl
+
+#
+# COPY   entrypoint.sh /entrypoint.sh
+
+#
+RUN     apk add jq bash openssl;
+
 
 ENTRYPOINT ["cfssl"]
 CMD ["--help"]
