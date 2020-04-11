@@ -55,7 +55,7 @@ fi
 CONF=$(cat ${CONF_FILE} | jq '.')
 
 # set cn
-CONF=$(echo $CONF | jq --arg CN ${CN} '.CN |= $CN')
+CONF=$(echo $CONF | jq --arg CN "${CN}" '.CN |= $CN')
 
 # update key algo if needed
 if [ "x${KEY_ALGO}" != "x" ]; then
